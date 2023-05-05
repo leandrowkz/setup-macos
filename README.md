@@ -47,9 +47,9 @@ $ ./setup.sh
 | Topnotch                | Makes your menubar black (ideal to M1 macs).                              |
 
 ## Apps you need to install manually
-Dear Sun:https://apps.apple.com/app/dear-sun/id1580614999
-App Cleaner: https://freemacsoft.net/appcleaner/
-EasyRes: https://apps.apple.com/us/app/easyres/id688211836?mt=12
+- Dear Sun:https://apps.apple.com/app/dear-sun/id1580614999
+- App Cleaner: https://freemacsoft.net/appcleaner/
+- EasyRes: https://apps.apple.com/us/app/easyres/id688211836?mt=12
 
 ## Automatically applied configurations
 Some OS configurations are automatically applied, like changes on dock or Finder.

@@ -1,10 +1,10 @@
-echo '\n\n🤖 Installing homebrew...' 
+echo '\n\n🤖 Installing Homebrew...' 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo '\n\n🤖 Installing starship...'
+echo '\n\n🤖 Installing Starship...'
 curl -sS https://starship.rs/install.sh | sh
 
-echo '\n\n🤖 Applying starship configs...'
+echo '\n\n🤖 Applying Starship configs...'
 cp ./configs/starship.toml ~/.config
 
 echo '\n\n🤖 Installing oh-my-zsh...'

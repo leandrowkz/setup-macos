@@ -14,8 +14,8 @@ $ ./setup.sh
 ## Automatically installed apps
 | App    | Description    |
 |-------------------------|---------------------------------------------------------------------------|
-| homebrew                | Package manager.                                                          |
-| starship                | Minimal, blazing-fast, and infinitely customizable prompt for any shell!  |
+| Homebrew                | Package manager.                                                          |
+| Starship                | Minimal, blazing-fast, and infinitely customizable prompt for any shell!  |
 | oh-my-zsh               | Framework for managing your Zsh configuration.                            |
 | Warp                    | The terminal for the 21st century.                                        |
 | Git                     | Version control system.                                                   |

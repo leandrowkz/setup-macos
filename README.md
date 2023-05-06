@@ -13,7 +13,7 @@ echo '\n🤖 Installing Homebrew...'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo '\n🤖 Installing Mas (mac app store)...' 
-brew install --cask mas
+brew install mas
 ```
 
 ## Apps

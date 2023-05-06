@@ -7,7 +7,7 @@ First you need to install Homebrew and Mac App Store (mas). After that you're re
 everything, just copy the content of the sections you want, paste it on your terminal and you are
 ready to go.
 
-## Install Homebrew and MAS
+### Install Homebrew and MAS
 ```bash
 echo '\n🤖 Installing Homebrew...' 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

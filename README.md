@@ -22,103 +22,103 @@ to filter the commands removing the apps you don't like.
 
 ### 🆙 Productivity
 ```bash
-echo '\n\n🤖 Installing Alfred...' 
+echo '\n🤖 Installing Alfred...' 
 brew install --cask alfred
 
-echo '\n\n🤖 Installing Notion...'
+echo '\n🤖 Installing Notion...'
 brew install --cask notion
 
-echo '\n\n🤖 Installing Vanilla...'
+echo '\n🤖 Installing Vanilla...'
 brew install --cask vanilla
 
-echo '\n\n🤖 Installing Amphetamine...'
+echo '\n🤖 Installing Amphetamine...'
 mas install 937984704
 
-echo '\n\n🤖 Installing MeetingBar...'
+echo '\n🤖 Installing MeetingBar...'
 brew install --cask meetingbar
 
-echo '\n\n🤖 Installing Slack...'
+echo '\n🤖 Installing Slack...'
 brew install --cask slack
 
-echo '\n\n🤖 Installing Figma...'
+echo '\n🤖 Installing Figma...'
 brew install --cask figma
 
-echo '\n\n🤖 Installing Grammarly...'
+echo '\n🤖 Installing Grammarly...'
 brew install --cask grammarly-desktop
 
-echo '\n\n✅ Done with productivity.'
+echo '\n✅ Done with productivity.'
 ```
 
 ### 💬 Messaging
 ```bash
-echo '\n\n🤖 Installing Slack...' 
+echo '\n🤖 Installing Slack...' 
 brew install --cask slack
 
-echo '\n\n🤖 Installing Telegram...' 
+echo '\n🤖 Installing Telegram...' 
 brew install --cask telegram
 
-echo '\n\n🤖 Installing Whatsapp...' 
+echo '\n🤖 Installing Whatsapp...' 
 brew install --cask whatsapp
 
-echo '\n\n🤖 Installing Discord...' 
+echo '\n🤖 Installing Discord...' 
 brew install --cask discord
 
-echo '\n\n✅ Done with messaging.'
+echo '\n✅ Done with messaging.'
 ```
 
 ### 🌐 Web browsers
 ```bash
-echo '\n\n🤖 Installing Arc...'
+echo '\n🤖 Installing Arc...'
 brew install --cask arc
 
-echo '\n\n🤖 Installing Google Chrome...'
+echo '\n🤖 Installing Google Chrome...'
 brew install --cask google-chrome
 
-echo '\n\n🤖 Installing Firefox...'
+echo '\n🤖 Installing Firefox...'
 brew install --cask firefox
 
-echo '\n\n🤖 Installing Microsoft Edge...'
+echo '\n🤖 Installing Microsoft Edge...'
 brew install --cask microsoft-edge
 
-echo '\n\n✅ Done with web browsers.'
+echo '\n✅ Done with web browsers.'
 ```
 
 ### 📦 Misc and utilities
 ```bash
-echo '\n\n🤖 Installing Topnotch...' 
+echo '\n🤖 Installing Topnotch...' 
 brew install --cask topnotch
 
-echo '\n\n🤖 Installing EasyRes...' 
+echo '\n🤖 Installing EasyRes...' 
 mas install 688211836
 
-echo '\n\n🤖 Installing Spotify...'
+echo '\n🤖 Installing Spotify...'
 brew install --cask spotify
 
-echo '\n\n🤖 Installing Unarchiver...'
+echo '\n🤖 Installing Unarchiver...'
 brew install --cask the-unarchiver
 
-echo '\n\n🤖 Installing Rectangle...'
+echo '\n🤖 Installing Rectangle...'
 brew install --cask rectangle
 
-echo '\n\n🤖 Installing Gifox...'
+echo '\n🤖 Installing Gifox...'
 brew install --cask gifox
 
-echo '\n\n🤖 Installing MenubarX...'
+echo '\n🤖 Installing MenubarX...'
 brew install --cask menubarx
 
-echo '\n\n🤖 Installing Dear Sun...'
+echo '\n🤖 Installing Dear Sun...'
 mas install 1580614999
 
-echo '\n\n🤖 Installing Rocket...'
+echo '\n🤖 Installing Rocket...'
 brew install --cask rocket
 
-echo '\n\n🤖 Installing NordVPN...'
+echo '\n🤖 Installing NordVPN...'
 brew install --cask nordvpn
 
-echo '\n\n🤖 Installing Bitwarden...'
+echo '\n🤖 Installing Bitwarden...'
 brew install --cask bitwarden
 
-echo '\n\n✅ Done with misc and utilities.'
+echo '\n✅ Done with misc and utilities.'
 ```
 
 ### 👩‍💻 Development
@@ -172,10 +172,10 @@ You can install new terminals on your mac os. For this setup the combination
 ### 1. Install terminal stuff
 Besides warp and starship, you also need oh-my-zsh to easy apply zsh configurations.
 ```bash
-echo '\n\n🤖 Installing oh-my-zsh...'
+echo '\n🤖 Installing oh-my-zsh...'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo '\n\n🤖 Installing Warp terminal...'
+echo '\n🤖 Installing Warp terminal...'
 brew install --cask warp
 
 echo '\n🤖 Installing Starship...'
@@ -258,30 +258,30 @@ source $ZSH/oh-my-zsh.sh
 You can also apply some basic configurations to your mac os that changes the dock, finder and more.
 Take a look at those you think it makes sense to your installation.
 ```bash
-echo '\n\n🤖 Setting Finder to show hidden files...'
+echo '\n🤖 Setting Finder to show hidden files...'
 defaults write com.apple.finder "AppleShowAllFiles" -bool "true" && killall Finder
 
-echo '\n\n🤖 Setting Finder to display as columns by default...'
+echo '\n🤖 Setting Finder to display as columns by default...'
 defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv" && killall Finder
 
-echo '\n\n🤖 Setting minimize animations to "scale" effect...'
+echo '\n🤖 Setting minimize animations to "scale" effect...'
 defaults write com.apple.dock "mineffect" -string "scale" && killall Dock
 
-echo '\n\n🤖 Setting dock icon size to 36...'
+echo '\n🤖 Setting dock icon size to 36...'
 defaults write com.apple.dock "tilesize" -int "36" && killall Dock
 
-echo '\n\n🤖 Setting dock to autohide...'
+echo '\n🤖 Setting dock to autohide...'
 defaults write com.apple.dock "autohide" -bool "true" && killall Dock
 
-echo '\n\n🤖 Setting dock to not show recent apps...'
+echo '\n🤖 Setting dock to not show recent apps...'
 defaults write com.apple.dock "show-recents" -bool "false" && killall Dock
 
-echo '\n\n🤖 Adding 5 blank spaces to dock...'
+echo '\n🤖 Adding 5 blank spaces to dock...'
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 
-echo '\n\n✅ Done with OS configs.'
+echo '\n✅ Done with OS configs.'
 ```

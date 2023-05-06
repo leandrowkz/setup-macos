@@ -21,7 +21,6 @@ brew install --cask mas
 to filter the commands removing the apps you don't like.
 
 ### 🆙 Productivity
-Apps for work or productivity.
 ```bash
 echo '\n\n🤖 Installing Alfred...' 
 brew install --cask alfred
@@ -51,7 +50,6 @@ echo '\n\n✅ Done with productivity.'
 ```
 
 ### 💬 Messaging
-Communication and messaging apps.
 ```bash
 echo '\n\n🤖 Installing Slack...' 
 brew install --cask slack
@@ -69,7 +67,6 @@ echo '\n\n✅ Done with messaging.'
 ```
 
 ### 🌐 Web browsers
-No Internet Explorer 11.
 ```bash
 echo '\n\n🤖 Installing Arc...'
 brew install --cask arc
@@ -87,7 +84,6 @@ echo '\n\n✅ Done with web browsers.'
 ```
 
 ### 📦 Misc and utilities
-Utilities or related to OS apps.
 ```bash
 echo '\n\n🤖 Installing Topnotch...' 
 brew install --cask topnotch
@@ -126,7 +122,6 @@ echo '\n\n✅ Done with misc and utilities.'
 ```
 
 ### 👩‍💻 Development
-Apps for software development or related.
 ```bash
 echo '\n🤖 Installing Git...' 
 brew install git

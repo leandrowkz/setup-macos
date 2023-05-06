@@ -20,7 +20,7 @@ brew install --cask mas
 **An important disclaimer:** those are the apps that I personally am used to use. You are encouraged
 to filter the commands removing the apps you don't like.
 
-## 🆙 Productivity
+### 🆙 Productivity
 Apps for work or productivity.
 ```bash
 echo '\n\n🤖 Installing Alfred...' 

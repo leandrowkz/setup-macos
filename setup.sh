@@ -1,6 +1,9 @@
 echo '\n\n🤖 Installing Homebrew...' 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+echo '\n\n🤖 Installing Mas (mac app store)...' 
+brew install --cask mas
+
 echo '\n\n🤖 Installing Starship...'
 curl -sS https://starship.rs/install.sh | sh
 
@@ -18,6 +21,9 @@ brew install --cask warp
 
 echo '\n\n🤖 Installing Topnotch...' 
 brew install --cask topnotch
+
+echo '\n\n🤖 Installing Alfred...' 
+brew install --cask alfred
 
 echo '\n\n🤖 Setting Finder to show hidden files...'
 defaults write com.apple.finder "AppleShowAllFiles" -bool "true" && killall Finder
@@ -62,6 +68,12 @@ brew install pnpm
 echo '\n\n🤖 Installing Yarn...'
 npm i -g yarn
 
+echo '\n\n🤖 Installing AWS cli...' 
+brew install --cask awscli
+
+echo '\n\n🤖 Installing Terraform...' 
+brew install --cask terraform
+
 echo '\n\n🤖 Installing VSCode...'
 brew install --cask visual-studio-code
 
@@ -70,6 +82,9 @@ brew install --cask slack
 
 echo '\n\n🤖 Installing TablePlus...'
 brew install --cask tableplus
+
+echo '\n\n🤖 Installing Sequel Pro...'
+brew install sequel-pro
 
 echo '\n\n🤖 Installing Docker...'
 brew install docker
@@ -85,6 +100,9 @@ brew install --cask notion
 
 echo '\n\n🤖 Installing Spotify...'
 brew install --cask spotify
+
+echo '\n\n🤖 Installing Arc...'
+brew install --cask arc
 
 echo '\n\n🤖 Installing Google Chrome...'
 brew install --cask google-chrome

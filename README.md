@@ -223,13 +223,13 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
 conflicted = " 🆘×${count}"
-ahead = " 🅰️×${count}"
-behind = " 🅱️×${count}"
+ahead = " 🅰️ ×${count}"
+behind = " 🅱️ ×${count}"
 diverged = " 🆎${ahead_count}×${behind_count}"
 untracked = " 🆕×${count}"
 stashed = " 🚾"
 modified = " 🚧×${count}"
-staged = " ⤴️×${count}"
+staged = " ⤴️ ×${count}"
 renamed = " 🈯️×${count}"
 deleted = " ⛔️×${count}"
 style = "bright-white"

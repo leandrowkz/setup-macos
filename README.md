@@ -37,16 +37,11 @@ mas install 937984704
 echo '\n🤖 Installing MeetingBar...'
 brew install --cask meetingbar
 
-echo '\n🤖 Installing Slack...'
-brew install --cask slack
-
 echo '\n🤖 Installing Figma...'
 brew install --cask figma
 
 echo '\n🤖 Installing Grammarly...'
 brew install --cask grammarly-desktop
-
-echo '\n✅ Done with productivity.'
 ```
 
 ### 💬 Messaging
@@ -62,8 +57,6 @@ brew install --cask whatsapp
 
 echo '\n🤖 Installing Discord...' 
 brew install --cask discord
-
-echo '\n✅ Done with messaging.'
 ```
 
 ### 🌐 Web browsers
@@ -79,8 +72,6 @@ brew install --cask firefox
 
 echo '\n🤖 Installing Microsoft Edge...'
 brew install --cask microsoft-edge
-
-echo '\n✅ Done with web browsers.'
 ```
 
 ### 📦 Misc and utilities
@@ -88,11 +79,11 @@ echo '\n✅ Done with web browsers.'
 echo '\n🤖 Installing Topnotch...' 
 brew install --cask topnotch
 
-echo '\n🤖 Installing EasyRes...' 
-mas install 688211836
-
 echo '\n🤖 Installing Spotify...'
 brew install --cask spotify
+
+echo '\n🤖 Installing AppCleaner...'
+brew install --cask appcleaner
 
 echo '\n🤖 Installing Unarchiver...'
 brew install --cask the-unarchiver
@@ -117,8 +108,6 @@ brew install --cask nordvpn
 
 echo '\n🤖 Installing Bitwarden...'
 brew install --cask bitwarden
-
-echo '\n✅ Done with misc and utilities.'
 ```
 
 ### 👩‍💻 Development
@@ -142,10 +131,13 @@ echo '\n🤖 Installing Yarn...'
 npm i -g yarn
 
 echo '\n🤖 Installing AWS cli...' 
-brew install --cask awscli
+brew install awscli
 
 echo '\n🤖 Installing Terraform...' 
-brew install --cask terraform
+brew install terraform
+
+echo '\n🤖 Installing DevToys...'
+brew install --cask devtoys
 
 echo '\n🤖 Installing VSCode...'
 brew install --cask visual-studio-code
@@ -161,56 +153,127 @@ brew install docker
 
 echo '\n🤖 Installing Postman...'
 brew install --cask postman
-
-echo '\n✅ Done with development.'
 ```
 
 ## Terminals
-You can install new terminals on your mac os. For this setup the combination
-[Warp](https://warp.dev) + [Starship](https://starship.rs) is the choice.
+MacOS default terminal is too simple, so let's install a better terminal and related tools. For this setup the combination is [oh-my-zsh](https://ohmyz.sh) + [Warp](https://warp.dev) + [Starship](https://starship.rs). The result should be something like this terminal:
 
-### 1. Install terminal stuff
-Besides warp and starship, you also need oh-my-zsh to easy apply zsh configurations.
+![Warp](./warp.gif)
+
+### 1. Install oh-my-zsh
+You need to first install oh-my-zsh to handle your zsh configurations better.
 ```bash
 echo '\n🤖 Installing oh-my-zsh...'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
+### 2. Install Warp terminal and Starship
+Warp is a terminal on steroids, whereas starship is a nice prompt.
+```bash
 echo '\n🤖 Installing Warp terminal...'
 brew install --cask warp
 
 echo '\n🤖 Installing Starship...'
 curl -sS https://starship.rs/install.sh | sh
-
-echo '\n✅ Done with terminal installation.'
 ```
 
-### 2. Apply Starship configs
-Create a file called `~/.config/starship.toml`:
+### 3. Set warp to respect custom prompts
+Warp by default comes with its own prompt, which overrides starship. In order to have starship working
+you need to toggle custom prompt by right-clicking on the prompt area above the input and select "Use my own prompt" or toggle "Honor user's custom prompt (PS1) from the Settings > Features page".
+
+For more information, see: https://docs.warp.dev/features/prompt#how-to-access-it
+
+### 4. Apply Starship configs
+Create a file called `~/.config/starship.toml` with the following content:
 ```toml
 # All config option can be found here:
 # https://starship.rs/config/#prompt
 
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
 
-# Inserts a blank line between shell prompts
-# It's disabled because in Warp this happens by default and
-# this causes an empty space before the prompt text
-add_newline = false
+[[battery.display]]
+threshold = 30
+style = "bold red"
 
-# Symbols that appear before your command input
-# It's disabled because Warp puts the input in a separeted line
 [character]
-# success_symbol = '[✅](bold)'
-# error_symbol = '[🔥](bold)'
+error_symbol = "[✖](bold red) "
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = "🍣 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 ×${count}"
+behind = "🐢 ×${count}"
+diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️ ×${count}"
+stashed = "📦 "
+modified = "📝 ×${count}"
+staged = "🗃️ ×${count}"
+renamed = "📛 ×${count}"
+deleted = "🗑️ ×${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
 disabled = true
 
-# Disabling package module
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
+
 [package]
-disabled = true
+disabled = false
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[time]
+time_format = "%T"
+format = "🕙 $time($style) "
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
 ```
 
-### 3. Apply zsh configs
+### 5. Apply zsh configs
 Create (or change) a file called `~/.zshrc` with the following content:
 ```
 # If you come from bash you might have to change your $PATH.
@@ -267,8 +330,8 @@ defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv" && killall
 echo '\n🤖 Setting minimize animations to "scale" effect...'
 defaults write com.apple.dock "mineffect" -string "scale" && killall Dock
 
-echo '\n🤖 Setting dock icon size to 36...'
-defaults write com.apple.dock "tilesize" -int "36" && killall Dock
+echo '\n🤖 Setting dock icon size to 48...'
+defaults write com.apple.dock "tilesize" -int "48" && killall Dock
 
 echo '\n🤖 Setting dock to autohide...'
 defaults write com.apple.dock "autohide" -bool "true" && killall Dock
@@ -282,6 +345,12 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
+```
 
-echo '\n✅ Done with OS configs.'
+## Enable HiDPI resolutions
+You may need to enable some hidpi resolution to simulate retina resolutions. This is usually necessary for external monitors. Take a look at this https://github.com/xzhih/one-key-hidpi repository for details or run\
+the following command to start configuring:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)"
 ```

@@ -222,10 +222,10 @@ style = "bold white"
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
-conflicted = " 🆚×${count}"
-ahead = " ⏩×${count}"
-behind = " ⏪×${count}"
-diverged = " 🆘 ⏪×${behind_count} ⏩×${ahead_count}"
+conflicted = " 🆘×${count}"
+ahead = " 🅰️×${count}"
+behind = " 🅱️×${count}"
+diverged = " 🆎${ahead_count}×${behind_count}"
 untracked = " 🆕×${count}"
 stashed = " 🚾"
 modified = " 🚧×${count}"

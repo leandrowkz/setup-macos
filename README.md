@@ -94,6 +94,9 @@ brew install --cask rectangle
 echo '\n🤖 Installing Gifox...'
 brew install --cask gifox
 
+echo '\n🤖 Installing Shottr...'
+brew install --cask shottr
+
 echo '\n🤖 Installing MenubarX...'
 brew install --cask menubarx
 

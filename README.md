@@ -16,6 +16,159 @@ echo '\n🤖 Installing Mas (mac app store)...'
 brew install mas
 ```
 
+## Terminals
+Let's install a better terminal and related tools. For this setup, the combination is [oh-my-zsh](https://ohmyz.sh) + [Starship](https://starship.rs) on native macos terminal. The result should be something like:
+
+![Terminal](./terminal.gif)
+
+### 1. Install oh-my-zsh
+You need to first install oh-my-zsh to handle your zsh configurations better.
+```bash
+echo '\n🤖 Installing oh-my-zsh...'
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 2. Starship
+Let's install starship, a nice prompt.
+```bash
+echo '\n🤖 Installing Starship...'
+curl -sS https://starship.rs/install.sh | sh
+```
+
+### 3. Apply Starship configs
+Create a file called `~/.config/starship.toml` with the following content:
+```toml
+# All config option can be found here:
+# https://starship.rs/config/#prompt
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
+[character]
+error_symbol = "❌"
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = "🍣 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = " 🆘×${count}"
+ahead = " 🅰️ ×${count}"
+behind = " 🅱️ ×${count}"
+diverged = " 🆎${ahead_count}×${behind_count}"
+untracked = " 🆕×${count}"
+stashed = " 🚾"
+modified = " 🚧×${count}"
+staged = " ⤴️ ×${count}"
+renamed = " 🈯️×${count}"
+deleted = " ⛔️×${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
+
+[package]
+disabled = false
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[time]
+time_format = "%T"
+format = "🕙 $time($style) "
+style = "bright-white"
+disabled = false
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
+```
+
+### 4. Apply zsh configs
+Create (or change) a file called `~/.zshrc` with the following content:
+```
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME=""
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+# Preferred editor for local and remote sessions
+export EDITOR=/usr/bin/vim
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# NVM configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## Initialize
+eval "$(starship init zsh)"
+source $ZSH/oh-my-zsh.sh
+```
+
 ## Apps
 **An important disclaimer:** those are the apps that I personally am used to use. You are encouraged
 to filter the commands removing the apps you don't like.
@@ -156,168 +309,6 @@ brew install docker
 
 echo '\n🤖 Installing Postman...'
 brew install --cask postman
-```
-
-## Terminals
-MacOS default terminal is too simple, so let's install a better terminal and related tools. For this setup the combination is [oh-my-zsh](https://ohmyz.sh) + [Warp](https://warp.dev) + [Starship](https://starship.rs). The result should be something like this terminal:
-
-![Warp](./warp.gif)
-
-### 1. Install oh-my-zsh
-You need to first install oh-my-zsh to handle your zsh configurations better.
-```bash
-echo '\n🤖 Installing oh-my-zsh...'
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### 2. Install Warp terminal and Starship
-Warp is a terminal on steroids, whereas starship is a nice prompt.
-```bash
-echo '\n🤖 Installing Warp terminal...'
-brew install --cask warp
-
-echo '\n🤖 Installing Starship...'
-curl -sS https://starship.rs/install.sh | sh
-```
-
-### 3. Set warp to respect custom prompts
-Warp by default comes with its own prompt, which overrides starship. In order to have starship working
-you need to toggle custom prompt by right-clicking on the prompt area above the input and select "Use my own prompt" or toggle "Honor user's custom prompt (PS1) from the Settings > Features page".
-
-For more information, see: https://docs.warp.dev/features/prompt#how-to-access-it
-
-### 4. Apply Starship configs
-Create a file called `~/.config/starship.toml` with the following content:
-```toml
-# All config option can be found here:
-# https://starship.rs/config/#prompt
-
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
-
-[[battery.display]]
-threshold = 30
-style = "bold red"
-
-[character]
-error_symbol = "❌"
-
-[cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
-format = " took [$duration]($style)"
-
-[directory]
-truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style) "
-
-[git_branch]
-format = " [$symbol$branch]($style) "
-symbol = "🍣 "
-style = "bold yellow"
-
-[git_commit]
-commit_hash_length = 8
-style = "bold white"
-
-[git_state]
-format = '[\($state( $progress_current of $progress_total)\)]($style) '
-
-[git_status]
-conflicted = " 🆘×${count}"
-ahead = " 🅰️ ×${count}"
-behind = " 🅱️ ×${count}"
-diverged = " 🆎${ahead_count}×${behind_count}"
-untracked = " 🆕×${count}"
-stashed = " 🚾"
-modified = " 🚧×${count}"
-staged = " ⤴️ ×${count}"
-renamed = " 🈯️×${count}"
-deleted = " ⛔️×${count}"
-style = "bright-white"
-format = "$all_status$ahead_behind"
-
-[hostname]
-ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
-
-[memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
-style = "bold dimmed white"
-disabled = false
-
-[package]
-disabled = false
-
-[python]
-format = "[$symbol$version]($style) "
-style = "bold green"
-
-[rust]
-format = "[$symbol$version]($style) "
-style = "bold green"
-
-[time]
-time_format = "%T"
-format = "🕙 $time($style) "
-style = "bright-white"
-disabled = false
-
-[username]
-style_user = "bold dimmed blue"
-show_always = false
-
-[nodejs]
-format = "via [🤖 $version](bold green) "
-```
-
-### 5. Apply zsh configs
-Create (or change) a file called `~/.zshrc` with the following content:
-```
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-# Preferred editor for local and remote sessions
-export EDITOR=/usr/bin/vim
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# NVM configuration
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-## Initialize
-eval "$(starship init zsh)"
-source $ZSH/oh-my-zsh.sh
 ```
 
 ## OS configurations

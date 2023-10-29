@@ -1,4 +1,4 @@
-# 🤖 Setup MacOS
+# 🤖 Setup macOS
 Here is all necessary apps, configs and more, to a fresh macos installation aimed to software
 engineers. Basically, the scripts this repo provide install applications and set basic OS configurations. 
 

@@ -1,4 +1,4 @@
-# 🤖 MacOS setup
+# 🤖 Setup MacOS
 Here is all necessary apps, configs and more, to a fresh macos installation aimed to software
 engineers. Basically, the scripts this repo provide install applications and set basic OS configurations. 
 
@@ -180,6 +180,9 @@ brew install --cask alfred
 
 echo '\n🤖 Installing Notion...'
 brew install --cask notion
+
+echo '\n🤖 Installing Linear...'
+brew install --cask linear-linear
 
 echo '\n🤖 Installing Vanilla...'
 brew install --cask vanilla

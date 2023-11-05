@@ -184,9 +184,6 @@ brew install --cask notion
 echo '\n🤖 Installing Linear...'
 brew install --cask linear-linear
 
-echo '\n🤖 Installing Vanilla...'
-brew install --cask vanilla
-
 echo '\n🤖 Installing Amphetamine...'
 mas install 937984704
 
@@ -234,6 +231,9 @@ brew install --cask microsoft-edge
 ```bash
 echo '\n🤖 Installing Topnotch...' 
 brew install --cask topnotch
+
+echo '\n🤖 Installing Vanilla...'
+brew install --cask vanilla
 
 echo '\n🤖 Installing Spotify...'
 brew install --cask spotify

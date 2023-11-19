@@ -3,8 +3,8 @@ Here is all necessary apps, configs and more, to a fresh macos installation aime
 engineers. Basically, the scripts this repo provide install applications and set basic OS configurations. 
 
 ## Usage
-First you need to install Homebrew and Mac App Store (mas). After that you're ready to install
-everything, just copy the content of the sections you want, paste it on your terminal and you are
+First you need to install Homebrew and Mac App Store (mas). After that, you're ready to install
+everything. Just copy the content of the sections you want, paste it on your terminal, and you are
 ready to go.
 
 ### Install Homebrew and MAS

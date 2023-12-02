@@ -175,9 +175,6 @@ to filter the commands removing the apps you don't like.
 
 ### 🆙 Productivity
 ```bash
-echo '\n🤖 Installing Alfred...' 
-brew install --cask alfred
-
 echo '\n🤖 Installing Notion...'
 brew install --cask notion
 

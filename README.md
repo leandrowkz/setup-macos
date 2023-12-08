@@ -333,8 +333,7 @@ defaults write com.apple.dock "autohide" -bool "true" && killall Dock
 echo '\n🤖 Setting dock to not show recent apps...'
 defaults write com.apple.dock "show-recents" -bool "false" && killall Dock
 
-echo '\n🤖 Adding 5 blank spaces to dock...'
-defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
+echo '\n🤖 Adding 4 blank spaces to dock...'
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock

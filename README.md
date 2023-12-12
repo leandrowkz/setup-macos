@@ -107,10 +107,6 @@ disabled = false
 format = "[$symbol$version]($style) "
 style = "bold green"
 
-[rust]
-format = "[$symbol$version]($style) "
-style = "bold green"
-
 [time]
 time_format = "%T"
 format = "🕙 $time($style) "

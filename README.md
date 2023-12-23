@@ -36,15 +36,15 @@ curl -sS https://starship.rs/install.sh | sh
 ```
 
 ### 3. Apply Starship configs
-Create a file called `~/.config/starship.toml` with the following content:
+Create a file `~/.config/starship.toml` with the following content:
 ```toml
 # All config option can be found here:
 # https://starship.rs/config/#prompt
 
 [battery]
 full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
+charging_symbol = "⚡"
+discharging_symbol = "🪫"
 
 [[battery.display]]
 threshold = 30
@@ -118,7 +118,7 @@ style_user = "bold dimmed blue"
 show_always = false
 
 [nodejs]
-format = "via [🤖 $version](bold green) "
+format = "via [node $version](bold green) "
 ```
 
 ### 4. Apply zsh configs

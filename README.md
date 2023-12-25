@@ -337,7 +337,7 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 ```
 
 ## Enable HiDPI resolutions
-You may need to enable some hidpi resolution to simulate retina resolutions. This is usually necessary for external monitors. Take a look at this https://github.com/xzhih/one-key-hidpi repository for details or run\
+You may need to enable some high DPI resolution to simulate retina resolutions. This is usually necessary for external monitors. Take a look at this https://github.com/xzhih/one-key-hidpi repository for details or run\
 the following command to start configuring:
 
 ```bash
